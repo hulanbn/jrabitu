@@ -19,12 +19,14 @@
             padding: 10px;
             vertical-align: top;
         }
-        .header {
+        header {
             background-color: #4267B2;
             color: white;
             padding: 10px;
+            text-align: right; 
+            padding-right: 100px;
         }
-        .nav {
+        nav {
             color: white;
             background-color: #4267B2;
         }
@@ -33,18 +35,20 @@
             padding: 5px;
             text-align: right;
         }
+
         li{
             list-style: none; 
             margin-left: 10px;
             padding: 2px;
         }
-        .content {
+        content {
             padding: 10px;
         }
-        .footer {
-            background-color: #e9ebee;
+        footer {
             padding: 5px;
+            position: center;
             text-align: center;
+            bottom: 0;
         }
 
         b {
@@ -53,204 +57,202 @@
     </style>
 </head>
 <body>
-
-    <table class="bordertable" width="700" cellspacing="0" cellpadding="0" border="0">
+    <header> <h1>Facebook</h1> </header>
+    
+    <nav width="700" colspan="50" style="text-align: right;">
+        <a href="#" style="text-decoration: none; color: white;">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">Search</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">Global</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">Social Net</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">Invite</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">FAQ</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" style="text-decoration: none; color: white;">Log Out</a>
+    </nav>
+    
+    <table>
         <tr>
-            <td width="700" colspan="50" class="header" style="text-align: right; padding-right: 100px;">
-                <h1>Facebook</h1>
+            <td>
+                <aside>
+                        <table width="20%">
+                            <tr>
+                                <td style="border: rgb(99, 99, 99) dotted; width: 5px; padding: 15px;">
+                                    <input type="text" placeholder="Search.."> quick search<button>go</button>
+                                </td>
+                            </tr>
+    
+                            <br>
+                        
+                            <tr>
+                                <td style="border: rgb(99, 99, 99) dotted; width: 5px; padding: 5px;">
+                                    
+                                         <li>  <a href="#" style="text-decoration: none; color: blue;">My profile</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My profile</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My groups</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My friends</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My messages</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My away messages</a></li>
+                                        <li>  <a href="#" style="text-decoration: none; color: blue;">My account info</a></li>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                </aside>
             </td>
-        </tr>
-        <tr class="nav">
-            <td width="700" colspan="50" style="text-align: right;">
-                <a href="#" style="text-decoration: none; color: white;">Home</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">Search</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">Global</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">Social Net</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">Invite</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">FAQ</a>&nbsp;&nbsp;&nbsp;
-                <a href="#" style="text-decoration: none; color: white;">Log Out</a>
-            </td>
-        </tr>
-      </table>
-      <table colspan="100">
-            <tr>
-              <td width="20%">
-                  <table width="20%">
-                    <tr>
-                          <td style="border: rgb(99, 99, 99) dotted; width: 5px; padding: 15px;">
-                            <input type="text" placeholder="Search.."> quick search<button>go</button>
-                          </td>
-                    </tr>
-  
-                    <tr height="7px"></tr>
-                      
-                    <tr>
-                          <td style="border: rgb(99, 99, 99) dotted; width: 5px; padding: 5px;">
-                            
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My profile</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My profile</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My groups</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My friends</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My messages</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My away messages</a></li>
-                                <li>  <a href="#" style="text-decoration: none; color: blue;">My account info</a></li>
-                            
-                          </td>
-                    </tr>
-                  </table>
-              </td>
-              
-              
-              <td>
-                  <table  style="color: black; border: 1px solid;">
-                    <tr>
-                        <td colspan="2" style="padding: 0;">
-                            <table >
-                                <tr>
-                                    <td  style="background-color: #4f81bd; color: white;">Scott's profile [This is you]</td>
-                                </tr>
-                            </table>   
-                        </td>
-                    </tr>
+                
+            <td>
+                <article>
+                    <table  style="color: black; border: 1px solid;">
+                        <tr>
+                            <td colspan="2" style="padding: 0;">
+                                <table >
+                                    <tr>
+                                        <td  style="background-color: #4f81bd; color: white;">Scott's profile [This is you]</td>
+                                    </tr>
+                                </table>   
+                            </td>
+                        </tr>
 
-                    <tr>
+                        <tr>
                           
-                        <td width="40%">
-                            <table>
-                                <tr>
-                                    <td> <!--picture-->
-                                        <table border="1">
-                                            <tr>
-                                                <td style="background-color: #4f81bd; color: white;">Picture</td>
-                                            </tr>
-                                            <tr border="0">
-                                                <td height="200px">
-                                                    <img src="https://i.pinimg.com/564x/9f/9e/07/9f9e0782a356129bbd4b26962f368149.jpg" height="350" width="350" style="position: center;">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
+                            <td width="40%">
+                                <table>
+                                    <tr>
+                                        <td> <!--picture-->
+                                            <table border="1">
+                                                <tr>
+                                                    <td style="background-color: #4f81bd; color: white;">Picture</td>
+                                                </tr>
+                                                <tr border="0">
+                                                    <td height="200px">
+                                                        <img src="https://i.pinimg.com/564x/9f/9e/07/9f9e0782a356129bbd4b26962f368149.jpg" height="350" width="350" style="position: center;">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                            <table>
-                                <tr> <!--pic dood tal-->
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <table border="1">
-                                                        <tr ><td> Visualize my friends</td></tr>
-                                                        <tr><td> Edit my profile</td></tr>
-                                                        <tr><td> My account preferences</td></tr>
-                                                        <tr><td> My privacy preferences</td></tr>
-                                                    </table>
-                                                </td>  
-                                            </tr>
-                                        </table> 
-                                    </td>
-                                </tr>
-                            </table>
-                            
-                            <table>
-                                <tr> <!--connection-->
-                                    <td>
-                                        <table border="1" width="100%">
-                                            <tr>
-                                                <td style="background-color: #4f81bd; color: white;">Connection</td>
-                                            </tr>
-                                            <tr>
-                                                <td>This is you</td>
-                                            </tr>
+                                <table>
+                                    <tr> <!--pic dood tal-->
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <table border="1">
+                                                            <tr ><td> Visualize my friends</td></tr>
+                                                            <tr><td> Edit my profile</td></tr>
+                                                            <tr><td> My account preferences</td></tr>
+                                                            <tr><td> My privacy preferences</td></tr>
+                                                        </table>
+                                                    </td>  
+                                                </tr>
+                                            </table> 
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <table>
+                                    <tr> <!--connection-->
+                                        <td>
+                                            <table border="1" width="100%">
+                                                <tr>
+                                                    <td style="background-color: #4f81bd; color: white;">Connection</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>This is you</td>
+                                                </tr>
 
-                                        </table>
-                                        <br>
-                                        <table border="1" width="100%">
+                                            </table>
+                                            <br>
+                                            <table border="1" width="100%">
 
-                                            <tr>
-                                                <td style="background-color: #4f81bd; color: white;">Access</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Scott is currently logged in from a non-residential location.</td>
-                                            </tr>
-                                        </table>
-                                        <br>
-                                        <table border="1" width="100%">
+                                                <tr>
+                                                    <td style="background-color: #4f81bd; color: white;">Access</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Scott is currently logged in from a non-residential location.</td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                            <table border="1" width="100%">
 
-                                            <tr>
-                                                <td style="background-color: #4f81bd; color: white;">School</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Schools****</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
+                                                <tr>
+                                                    <td style="background-color: #4f81bd; color: white;">School</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Schools****</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                     
                           
-                        <td width="60%">
-                              <table border="1" style="margin-right: 10px; margin-top: 10px;">
-                                  <tr>
-                                      <td style="background-color: #4f81bd; color: white;">Information</td>
-                                  </tr>
-                                  <tr>
-                                      <td height="850">
-                                        <article>
-                                            <section>
-                                                <h4><b>Account info:</b></h4>
-                                                Name:John Doe<br>
-                                                Member since: 2020<br>
-                                                Last update: September 2024<br>
-                                            </section>
-                                            <section>
-                                                <h4> <b>Basic Info:</b></h4>
-        
-                                                E-mail:  <a href="hulanvn@gmail.com">example@email.com</a><br>
-                                                Status:                 Active<br>
-                                                Sex:                  Female<br>
-                                                Year:                 2002<br>
-                                                Concentration:        Computer Science<br>
-                                                Phone:                123-456-7890<br>
-                                                High school:                  Example High School<br>
-                                            </section>
-                                            <section>
-                                                <h4>Extended info:</h4>
-        
-                                                Screen name:                         JaneDoe<br>
-                                                Looking for:                 Networking<br>
-                                                Interested in:                  Technology<br>
-                                                Relationship status:    Single<br>
-                                            </section>
+                            <td width="60%">
+                                <article>
+                                    <table border="1" style="margin-right: 10px; margin-top: 10px;">
+                                        <tr>
+                                            <td style="background-color: #4f81bd; color: white;">Information</td>
+                                        </tr>
+                                        <tr>
+                                            <td height="850">
+                                                <article>
+                                                    <section>
+                                                        <h4><b>Account info:</b></h4>
+                                                        Name:John Doe<br>
+                                                        Member since: 2020<br>
+                                                        Last update: September 2024<br>
+                                                    </section>
+                                                    <section>
+                                                        <h4> <b>Basic Info:</b></h4>
+                
+                                                        E-mail:  <a href="hulanvn@gmail.com">example@email.com</a><br>
+                                                        Status:                 Active<br>
+                                                        Sex:                  Female<br>
+                                                        Year:                 2002<br>
+                                                        Concentration:        Computer Science<br>
+                                                        Phone:                123-456-7890<br>
+                                                        High school:                  Example High School<br>
+                                                    </section>
+                                                    <section>
+                                                        <h4>Extended info:</h4>
+                
+                                                        Screen name:                         JaneDoe<br>
+                                                        Looking for:                 Networking<br>
+                                                        Interested in:                  Technology<br>
+                                                        Relationship status:    Single<br>
+                                                    </section>
 
-                                            <section>
-                                                <h4><b>About me</b></h4>
-                                                <article style="text-align: justify;">
-                                                    On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, 
-                                                    et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. 
-                                                    Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, 
-                                                    et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles 
-                                                    de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, 
-                                                    et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont 
-                                                    encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, 
-                                                    parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, 
-                                                    voire des phrases embarassantes).
+                                                    <section>
+                                                        <h4><b>About me</b></h4>
+                                                        <article style="text-align: justify;">
+                                                            On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, 
+                                                            et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. 
+                                                            Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, 
+                                                            et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles 
+                                                            de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, 
+                                                            et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont 
+                                                            encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, 
+                                                            parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, 
+                                                            voire des phrases embarassantes).
+                                                        </article>
+                                                    </section>
                                                 </article>
-                                            </section>
-                                         </article>
-                                      </td>
-                                  </tr>
-                              </table>
-                          </td>
-                      </tr>
-                    </tr>
-                  </table>
-              </td>
-          </tr>
-      </table>
-<footer>
-    <p style="text-align: center;">&copy; 2024</p>
-</footer>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </article>
+                            </td>
+                        </tr>
+                    
+                    </table>
+                </article>
+            </td>
+        </tr>
+    </table>
+    <footer>
+        <p style="text-align: center;">&copy; 2024</p>
+    </footer>
 </body>
 </html>

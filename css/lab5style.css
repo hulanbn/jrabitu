@@ -1,0 +1,26 @@
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+.headp{
+    padding: 5px;
+    margin: 0;
+    color: white;
+}
+
+body{
+    background-color: #1B1B6C;
+}
+
+text{
+    color: white;
+}
+
+.container{
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit), minmax(600px, 1fr);
+}

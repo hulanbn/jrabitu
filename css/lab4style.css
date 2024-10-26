@@ -9,16 +9,34 @@
 
 }
 
-body
-{
+body {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100%;
     min-height: 100vh;
+    margin: 0;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+    cursor: url("/jrabitu/pic/cursorcat2.png"), auto;
 }
 
-.background{
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://i.pinimg.com/564x/21/66/99/2166999e3d9989a10844e936f4dc4330.jpg"),radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(7px);
+    z-index: -1;
+}
+
+/* .background{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -28,20 +46,21 @@ body
     background-position: center;
     background-size: cover;
     z-index: -1;
-}
+} */
 
 .container
 {
     position: relative;
     width: 100%;
     max-width: 1000px;
-    min-height: 1000px;
+    min-height: 100px;
     border-radius: 25px;
-    margin: 80px;
+    margin: 80px auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
-    background-size: cover;
+    
+    
 }
 
 .container .left_side
@@ -141,24 +160,20 @@ body
 {
     margin-bottom: 15px;
 }
-
-.contactin.education h4 :nth-child(1)
-{
-    color: #134074;
-    font-weight: 500;
-}
-
-.contactin.education h4 :nth-child(2)
-{
-    color: #F6FFF8;
-    font-weight: 500;
-}
-
-.contactin.education h4 :nth-child(3)
-{
+  
+.contactin.education h4 {
     color: #F6FFF8;
     font-weight: 300;
-}
+    line-height: 1.6;
+  }
+
+.contactin.education h3 {
+    color: #F6FFF8;
+    font-weight: 500;
+    font-size: 19px;
+  }
+
+
 
 .contactin.skills span
 {
@@ -184,7 +199,7 @@ body
     position: relative;
     width: 100%;
     height: 6px;
-    background-color: #3B5089;
+    background-color: #C38586;
     display: block;
     margin-top: 5px;
 }
@@ -195,7 +210,8 @@ body
     top: 0;
     left: 0;
     height: 100%;
-    background: #C3C8D3 ;
+    background: #eca47f ;
+    border-radius: 25px;
 
 }
 
@@ -206,14 +222,15 @@ body
     height: 100%;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: rgba(248, 242, 227, 0.5);
-    
-    
+    background-color: rgba(248, 242, 227, 0.5);   
 }
+
+/* about */
 
 .about
 {
     margin-bottom: 50px;
+    margin-top: 50px;
 
 }
 
@@ -234,9 +251,14 @@ body
 
 article
 {
-    color: #645F55;
+    color: #4c4537;
     text-align: justify;
+    font-weight: 500;
 }
+
+/* about career */
+
+
 .about .box
 {
     display: flex;
@@ -261,3 +283,57 @@ article
     color: #645F55 ;
     font-size: 16px;
 }
+
+.about .box .text h4
+{
+    color:#645F55
+}
+
+.about .box .text p
+{
+    color:#4c4537
+
+}
+
+
+/* skills */
+
+
+.skills .box
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills .box h4
+{
+    text-transform: uppercase;
+    color: #645F55 ;
+    font-weight: 800;
+}
+
+.skills .box .percent
+{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(248, 242, 227, 0.5);
+    border-radius: 25px;
+    border: solid;
+    border-width: 1px;
+}
+
+.skills .box .percent div
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #7b6d54;
+    border-radius: 25px;
+}
+
