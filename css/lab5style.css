@@ -1,303 +1,541 @@
-/* .lato-regular {
+.lato-regular {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
-  
+
   .lato-bold {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: normal;
-  } */
-
-  *
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
   }
-  
-  /* color:
+
+    /* color:
   #13124f
   #1b1b6c
   #352ba5
   #f61067
   #2ad392
   #9090a5 */
-  
-  header{
-      right: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      background-color: #1b1b6c;
-  }
-  .headp{
-      padding: 5px;
-      margin: 10px;
-      color: white;
-      font-family: 'Lato', sans-serif;
-  }
-  
-  body{
-      background-color: white;
-      width: 100%;
-      height: 100%;
-  }
-  
-  .firstslide {
-      background-color: #13124f; 
-      width: 100%;
-      height: 300px;
-      margin: 0;
-  }
-  
-  .title1 {
-      font-size: 4em; 
-      color: #ffffff; 
-      font-family: 'Lato', sans-serif;
-      padding-top: 80px;
-      padding-left: 40px;
-  }
-  .para1 {
-      font-size: 1em; 
-      color: #ffffff; 
-      font-family: 'Lato', sans-serif;
-      padding-top: 8px;
-      padding-left: 40px;
-  }
-  
-  .button1 {
-      /* font-size: 1em;  */
-      display: inline-block;
-      background-color:#f61067;
-      color: #fff;
-      border:none; 
-      border-radius:10px; 
-      padding:5px;
-      margin-left: 40px;
-      margin-top: 15px;
-      min-height:35px; 
-      min-width: 120px;
-      box-sizing: border-box;
-      text-align: center;
-      text-decoration: none; 
-  }
-  
-  .maincontainer {
-      display: flex;
-      justify-content: space-between;
-      /* gap: 20px; */
-      padding: 25px;
-      width: 100%;
-      height: 100vh;
-      box-sizing: border-box;
-  }
-  
-  .leftcontent{
-      width: 55%;
-      margin-right: 35px;
-      padding-top: 55px;
-      padding-left: 45px;
-      box-sizing: border-box;
-  }
-  
-  .para2{
-      /* margin: 0; */
-      margin-top: 40px;
-      margin-right: 35px;
-      
-  }
-  
-  .videocontent{
-      /* width: 100%; */
-      margin: 0;
-      padding-top: 35px;
-      margin-right: 35px;
-  }
-  
-  .video1{
-      width: 100%;
-      height: 450px;
-      border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      margin-right: 35px;
-      display: block;    
-  }
-  
-  .alert {
-      display: flex;
-      align-items: center;
-      background-color: #9090a5;
-      color: #ffffff; 
-      padding: 5px;
-      border-radius: 5px;
-      margin-top: 20px;
-      font-family: Lato, sans-serif;
-  }
-  .alert-icon {
-      font-size: 1em;
-      margin-right: 5px;
-      margin-left: 5px;
-      padding: 7px;
-  }
-  
-  .alert-message {
-      font-size: 1em;
-  }
-  
-  
-  .rightcontent{
-      width: 45%;
-      margin: 0;
-      box-sizing: border-box;
-      padding-top: 55px;
-      /* background-color: #f4f4f4; */
-      /* padding: 20px; */
-      border-radius: 8px;
-      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .messages {
-      background-color: #ff4081;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      margin-bottom: 20px;
-  }
-  
-  .messages-title {
-      font-size: 1.2em;
-      font-weight: bold;
-  }
-  
-  .badge {
-      background-color: #1b1b6c;
-      color: white;
-      padding: 2px 8px;
-      border-radius: 50%;
-      font-weight: bold;
-  }
-  
-  .welcome {
-      background-color: #13124f;
-      border-radius: 5px;
-      height: auto;
-      
-  }
-  
-  .welcome-title {
-      background-color: #9090a5;
-      color: white;
-      font-weight: bold;
-      height: 55px;
-      padding: 20px;
-  }
-  
-  .welcome-text {
-      font-size: 0.9em;
-      color: white;
-      padding: 20px;
-      background-color: #13124f;
-  }
-  
-  .welcome-input {
-      width: 90%;
-      padding: 8px;
-      margin-top: 10px;
-      margin-left: 20px;
-      margin-right: 20px;
-      border: 1px solid #ccc;
-      background-color: #1b1b96;
-      border-radius: 4px;
-  }
-  
-  .send-btn {
-      background-color: #ff4081;
-      color: white;
-      margin: 10px 20px 20px 20px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 90%;
-  }
-  .bottom {
-      background-color: #1b1b96;
-      color: white;
-      font-weight: bold;
-      height: 35px;
-      padding: 10px;
-      text-align: center;
-  }
-  
-  .vote {
-      background-color: white;
-      padding: 20px;
-      margin-top: 20px;
-      border: solid 1px #ccc;
-      border-radius: 5px;
-  }
-  
-  .vote-title {
-      color: #333;
-      font-weight: bold;
-      margin-bottom: 10px;
-  }
-  
-  .vote-text {
-      font-size: 0.9em;
-      color: #555;
-      margin-bottom: 15px;
-  }
-  
-  .percent{
-  
-      background-color: #2ad392;
-      width: 100%;
-      height: 6px;
-      display: block;
-      margin: 5px;
-      overflow: hidden;
-  }
-  .percent div
-  {
-      position: relative;
-      height: 100%;
-      background: #ff4081;
-      width: 75%;
-  }
-  
-  .vote-btn {
-      padding: 10px 15px;
-      border: 2px solid transparent;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      margin: 5px;
-      width: 45%;
-  }
-  
-  .vote-btn.lame {
-      background-color: #ffffff;
-      color: #2ad392;
-      border-color: #2ad392;
-  }
-  
-  .vote-btn.cool {
-      background-color: #f61067;
-      color: white;
-      border-color: #f61067;
-  }
-  
-  
-  footer{
-      width: 100%;
-      height: 50px;
-      background-color: #13124f;
-      padding: 15px;
-      color: #fff;
-  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: #1b1b6c;
+    padding: 10px 20px;
+}
+
+.headp{
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.firstslide {
+    background-color: #13124f;
+    color: #ffffff;
+    padding: 80px 20px;
+}
+
+.title1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding: 80px 0 5px 40px;
+}
+
+.para1 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding: 0 0 0 40px;
+}
+
+.button1 {
+    font-size: 1rem;
+    background-color: #f61067;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin: 20px 0 0 40px;
+}
+
+.maincontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.leftcontent {
+    flex: 1 1 60%;
+    padding: 20px;
+}
+
+.title2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.solid {
+    border-bottom: 1px solid #888;
+    margin-bottom: 20px;
+}
+
+.para2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.videocontent {
+    margin-bottom: 20px;
+}
+
+.video1 {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    background-color: #9090a5;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.alert-message {
+    font-size: 1rem;
+}
+
+.rightcontent {
+    flex: 1 1 35%;
+    padding: 20px;
+}
+
+.messages {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.messages-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.badge {
+    background-color: #1b1b6c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.welcome {
+    background-color: #13124f;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.welcome-title {
+    background-color: #9090a5;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.welcome-text {
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.welcome-input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #1b1b96;
+    border-radius: 4px;
+    color: white;
+}
+
+.send-btn {
+    background-color: #ff4081;
+    color: white;
+    margin: 0 20px 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    width: calc(100% - 40px);
+}
+
+.bottom {
+    background-color: #1b1b96;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+.vote {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.vote-title {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.progress-bar {
+    display: flex;
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress.cool {
+    background-color: #f61067;
+    width: 70%;
+}
+
+.progress.lame {
+    background-color: #00e68a;
+    width: 30%;
+}
+
+.vote-btn {
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    width: 45%;
+}
+
+.vote-btn.lame {
+    background-color: #ffffff;
+    color: #2ad392;
+    border-color: #2ad392;
+}
+
+.vote-btn.cool {
+    background-color: #f61067;
+    color: white;
+    border-color: #f61067;
+}
+
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: #13124f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+
+/*  > 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
+    }
+    .title1 {
+        font-size: 2rem; 
+        padding: 50px 20px 5px 20px;
+        text-align: center;
+    }
+    .para1 {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .button1 {
+        font-size: 0.75rem;
+        margin: 10px 0 0 35px;
+        padding: 5px;
+        width: 20%; 
+        display: block;
+    }
+
+    .maincontainer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .leftcontent {
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .title2, .para2 {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .solid {
+        margin: 0 auto 20px auto;
+        width: 80%;
+    }
+    .video1 {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    .alert {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .rightcontent {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .messages, .welcome, .vote {
+        margin: 20px 0;
+    }
+    .welcome{
+        justify-content: center;
+        text-align: center;
+        margin:  4px;
+    }
+    .welcome-input, .send-btn {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .vote-btn {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .progress-bar {
+        height: 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+    .title1 {
+        font-size: 2.5em;
+        padding: 60px 20px 10px 20px;
+        text-align: center;
+    }
+    .para1 {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .button1 {
+        margin: 20px auto;
+        display: block;
+        width: 20%;
+    }
+
+    .maincontainer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .leftcontent, .rightcontent {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .title2, .para2 {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .solid {
+        margin: 0 auto 20px auto;
+        width: 80%;
+    }
+    .video1 {
+        width: 100%;
+        height: 350px;
+        padding: 0;
+    }
+    .alert {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .welcome{
+        justify-content: center;
+        text-align: center;
+        margin:  4px;
+    }
+    .welcome-input, .send-btn, .vote-btn {
+        width: 80%;
+        justify-content: center;
+        text-align: center;
+    }
+    .vote{
+        margin-top: 20px;
+    }
+    .progress-bar {
+        height: 15px;
+    }
+}
+
+/* 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 1rem;
+    }
+    .title1 {
+        font-size: 3em;
+    }
+    .button1 {
+        padding: 12px 24px;
+    }
+    .video1 {
+        height: 400px;
+    }
+}
+
+/* 1025px < */
+@media (min-width: 1025px) {
+    body {
+        font-size: 1rem;
+    }
+    .title1 {
+        font-size: 4em;
+    }
+    .button1 {
+        padding: 15px 30px;
+    }
+    .video1 {
+        height: 450px;
+    }
+}
+
+header .headp {
+    font-size: 1.5rem;
+}
+
+body, html {
+    min-height: 100%;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.alert {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-title .badge {
+    margin-left: 10px;
+}
+
+
+.vote-btn {
+    width: 45%;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .vote-btn {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+.progress-bar {
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress.cool, .progress.lame {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress.cool {
+    background-color: #f61067;
+    width: 70%;
+}
+
+.progress.lame {
+    background-color: #00e68a;
+    width: 30%;
+    left: 70%;
+}
+
+.welcome-input {
+    color: white;
+}
+
+.send-btn:hover, .vote-btn:hover {
+    opacity: 0.9;
+}
+

@@ -1,131 +1,143 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 8</title>
+    <title>lab 8</title>
     <style>
-        .bodolt {
-            margin-top: 10px;
-            padding: 5px;
-            border: 1px solid #ddd;
-            width: 100%;
-            max-width: 300px;
-        }
+      .bodolt{
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        width: 100%;
+        max-width: 300px;
+      }
     </style>
-</head>
-<body>
-    <h1>Бодлогууд</h1>
+  </head>
+  <body>
+    <h1>Бодлого</h1>
 
-    <!-- Гараас өгсөн тооны цифрүүдийн нийлбэр нь палимдром мөн эсэхийг шалгах -->
-    <label for="utga1">Тоог оруулна уу:</label>
+    <!--bodlogiin utga awah heseg-->
+
+    <!--palindrom mun eseh-->
+
+    <label for="utga1">Шалгах тоог оруулна уу: </label>
     <input type="number" id="utga1">
-    <button onclick="palindShalgah()">Цифрүүдийн нийлбэр палиндром эсэхийг шалгах</button>
+    <button onclick="palindShalgah()">Цифрүүдийн нийлбэр палинпром эсэхийг шалгах</button>
     <div id="hariu1" class="bodolt"></div>
 
-    <!-- Чоно туулайтай бод -->
+    <!--chono tuulai-->
     <label for="zai">Зайг оруулна уу: </label>
     <input type="number" id="zai">
     <button onclick="hugatsaa()">Хугацааг тооцоолох</button>
     <div id="hariu2" class="bodolt"></div>
 
-    <!-- Барилгын давхараас тоот олох -->
-    <label for="toot">Тоотыг оруулна уу:</label>
+    <!--toot-->
+    <label for="toot">Тоотыг оруулна уу: </label>
     <input type="number" id="toot">
     <button onclick="toot()">Байршлыг олох</button>
     <div id="hariu3" class="bodolt"></div>
 
-    <!-- хамгийн бага хуваагч -->
-    <label for="numbers">Утга оруулна уу: (тоо хооронд таслал тавих. Жишээ нь: 1, 2, ... гм):</label>
-    <input type="text" id="numbers">
+    <!--hbeh-->
+    <label for="too1">Эхний тоог оруулна уу: </label>
+    <input type="number" id="too1">
+    <label for="too2">Хоёр дахь тоог оруулна уу: </label>
+    <input type="number" id="too2">
     <button onclick="hbeh()">Хамгийн бага ерөнхий хуваагдагчийг олох</button>
     <div id="hariu4" class="bodolt"></div>
 
-    <!-- өглөө бол 2 зэрэг орой бол язгуур -->
-    <label for="num5">Утга оруулна уу:</label>
-    <input type="number" id="num5">
-    <button onclick="zeregYz()">2 зэрэг үү? 2 зэргийн язгуур уу?</button>
+    <!--ugluu oroi-->
+    <label for="utga5">Утга оруулна уу: </label>
+    <input type="number" id="utga5">
+    <button onclick="ugluuOroi()">тооцоолох</button>
     <div id="hariu5" class="bodolt"></div>
 
+
+    <!--bodoltiin heseg-->
     <script>
-        // bodlogo 1
-        function palindShalgah() {
-            let num = parseInt(document.getElementById("utga1").value);
-            let tsifNiilber = num.toString().split('').reduce((a, b) => a + parseInt(b), 0);
+      //bodolt1
+      function palindShalgah(){
+        let num = parseInt(document.getElementById("utga1").value);
+        let tsifrNiilber = num.toString().split('').reduce((a, b) => a + parseInt(b), 0);
 
-            let sum = 0;
-            let tempNum = num;
-            while (tempNum > 0) {
-                sum += tempNum % 10;
-                tempNum = Math.floor(tempNum / 10);
-            }
-
-            let palindrom = sum === parseInt(sum.toString().split('').reverse().join(''));
-
-            let garalt = `Цифрүүдийн нийлбэр нь: ${tsifNiilber}`;
-            if (palindrom) {
-                garalt += "; Палиндром мөн";
-            } else {
-                garalt += "; Палиндром биш";
-            }
-
-            document.getElementById("hariu1").textContent = garalt;
+        let sum = 0;
+        let tempNum = num;
+        while(tempNum>0){
+          sum+= tempNum%10;
+          tempNum = Math.floor(tempNum/10);
         }
 
-        // bodlogo 2
-        function hugatsaa() {
-            let zai = parseFloat(document.getElementById("zai").value);
-            const chono = 25;
-            const tuulai = 18;
-            let hurdZ = chono - tuulai;
-            const t = (zai / hurdZ) * 60;
-            document.getElementById("hariu2").textContent = `Гүйцэх хугацаа: ${t.toFixed(2)} минут`;
+        let palindrom = sum ===parseInt(sum.toString().split('').reverse().join(''));
+
+        let garalt = `Цифрүүдийн нийлбэр: ${tsifrNiilber} \n`;
+        if(palindrom){
+          garalt+="Палиндром мөн";
+        }else{
+          garalt+= "Палиндром биш";
         }
 
-        // bodlogo 3
-        function toot() {
-            let toot = parseInt(document.getElementById("toot").value);
-            let ail = 9 * 4;
-            let orts = Math.floor((toot - 1) / ail) + 1;
-            let dawhar = Math.floor(((toot - 1) % ail) / 4) + 1;
-            let olohToot = ((toot - 1) % 4) + 1;
-            document.getElementById("hariu3").textContent = `Орц: ${orts}, Давхар: ${dawhar}, Тоот: ${olohToot}`;
+        document.getElementById("hariu1").textContent = garalt;
+      }
+
+      //bodolt2
+
+      function hugatsaa() {
+        let zai = parseFloat(document.getElementById("zai").value);
+        const chono = 25;
+        const tuulai = 18;
+        let hurdZ = chono - tuulai;
+        const t = (zai / hurdZ) * 60;
+        document.getElementById("hariu2").textContent = `Гүйцэх хугацаа: ${t.toFixed(2)} минут`;
+        } // t-g 2 ornii nariiwchlaltaigaar hewlene.
+        
+        
+      //bodolt3
+      function toot() {
+        let toot = parseInt(document.getElementById("toot").value);
+        let ail = 9*4;
+        let orts = Math.floor((toot - 1) / ail) + 1;
+        let dawhar = Math.floor(((toot - 1) % ail) / 4) + 1;
+        let olohToot = ((toot - 1) % 4) + 1;
+        document.getElementById("hariu3").textContent = `Орц: ${orts}, Давхар: ${dawhar}, Тоот: ${olohToot}`;
+      }
+
+      //bodolt4
+      function hbeh() {
+        let num1 = parseInt(document.getElementById("too1").value);
+        let num2 = parseInt(document.getElementById("too2").value);
+
+        let hariu = hbehBodoh(num1, num2);
+
+        document.getElementById("hariu4").textContent = `Хамгийн бага ерөнхий хуваагч нь: ${hariu}`;
+      }
+
+        function hbehBodoh(a,b){
+          while(b!==0){
+            let temp = a%b;
+            a=b;
+            b=temp;
+          }
+          return a;
         }
 
-        // bodlogo 4
-        function hbeh() {
-            function findGCD(a, b) {
-                while (b !== 0) {
-                    let temp = a % b;
-                    a = b;
-                    b = temp;
-                }
-                return a;
-            }
+      //bodolt5
+      function ugluuOroi(){
+        let num = parseFloat(document.getElementById("utga5").value);
 
-            let nums = document.getElementById("numbers").value.split(',').map(num => parseInt(num.trim()));
-            if (nums.some(isNaN) || nums.length !== 5) return;
-            let hbeh1 = nums.reduce(findGCD);
-            document.getElementById("hariu4").textContent = `Хамгийн бага ерөнхий хуваагч: ${hbeh1}`;
+        let oTsag = new Date().getHours();
+        let ugluuEseh = oTsag >= 6 && oTsag < 12;
+        let garalt, hariu;
+
+        if(ugluuEseh){
+          garalt = Math.pow(num, 2);
+          hariu =  `Өглөө тул 2 зэрэгт дэвшүүлнэ: ${garalt}`;
+        }else{
+          garalt = Math.sqrt(num);
+          hariu = `Орой тул язгуур авна:  ${garalt}`;
         }
 
-        // bodlogo 5
-        function zeregYz() {
-            let num = parseFloat(document.getElementById("num5").value);            
-            let oTsag = new Date().getHours();
-            let ugluuEseh = oTsag >= 6 && oTsag < 12;
-            let garalt, resultText;
-
-            if (ugluuEseh) {
-                garalt = Math.pow(num, 2);
-                resultText = `Өглөө тул: ${num} 2 зэрэг нь ${garalt}.`;
-            } else {
-                garalt = Math.sqrt(num);
-                resultText = `Орой тул: ${num} язгуур нь ${garalt}.`;
-            }
-
-            document.getElementById("hariu5").textContent = resultText; 
-        }
+        document.getElementById("hariu5").textContent = hariu;
+      }
     </script>
-</body>
+  </body>
 </html>
