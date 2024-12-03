@@ -60,14 +60,17 @@
         let num = parseInt(document.getElementById("utga1").value);
         let tsifrNiilber = num.toString().split('').reduce((a, b) => a + parseInt(b), 0);
 
+        console.log(tsifrNiilber);
+
         let sum = 0;
-        let tempNum = num;
+        let tempNum = tsifrNiilber;
         while(tempNum>0){
-          sum+= tempNum%10;
+          sum *=10;
+          sum += (tempNum%10);
           tempNum = Math.floor(tempNum/10);
         }
 
-        let palindrom = sum ===parseInt(sum.toString().split('').reverse().join(''));
+        let palindrom = tsifrNiilber === parseInt(sum.toString().split('').reverse().join(''));
 
         let garalt = `Цифрүүдийн нийлбэр: ${tsifrNiilber} \n`;
         if(palindrom){
