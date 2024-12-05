@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify clone</title>
+    <title>Spotify Clone | Explore Popular Music</title>
+    <meta name="description" content="Discover trending artists, albums, and playlists on our Spotify clone website. Enjoy popular music and find new favorites.">
+    <meta property="og:title" content="Spotify Clone | Explore Popular Music">
+    <meta property="og:description" content="Discover trending artists, albums, and playlists.">
+    <meta property="og:image" content="pic/Spotify_Primary_Logo_RGB_White.png">
+    <meta property="og:url" content="http://spotfy.com">
+
+
+
     <link rel="stylesheet" href="./css/lab6-style.css">
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
-            <a href=""><img src="pic/Spotify_Primary_Logo_RGB_White.png" width="" height="30" alt="logo"></a>
+            <a href="" aria-label="Spotify Home"><img src="pic/Spotify_Primary_Logo_RGB_White.png" width="" height="30" alt="Spotify logo"></a>
         </div>
         <div class="home">
           <div class="home-bttn">
@@ -21,15 +29,16 @@
             </a>
           </div>
           <div class="search-bar">
-            <input type="text" placeholder="What do you want to play?">
-          </div>
+            <label for="search" class="visually-hidden">Search</label>
+            <input type="text" id="search" name="search" placeholder="What do you want to play?">
+          </div>          
         </div>
         <div class="auth-buttons">
           <button class="sign-up">Sign up</button>
           <button class="login">Log in</button>
       </div>
     </header>
-    <div class="main">
+    <div class="main" role="main">
       <div class="left-side">
         <div class="lib">
             <a href="">
@@ -87,7 +96,7 @@
               <h2>Popular artists</h2>
               <div class="card">
                   <div class="item">
-                      <img src="./pic/spotfy/weeknd.jpg" alt="weeknd">
+                      <img src="./pic/spotfy/weeknd.jpg" alt="The Weeknd" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -95,7 +104,7 @@
                       <p>Artist</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/lady gaga.jpg" alt="lady gaga">
+                      <img src="./pic/spotfy/lady gaga.jpg" alt="Lady Gaga" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -103,7 +112,7 @@
                       <p>Artist</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/billie eilish.jpg" alt="Billie Eilish">
+                      <img src="./pic/spotfy/billie eilish.jpg" alt="Billie Eilish" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -111,7 +120,7 @@
                       <p>Artist</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/rose.jpg" alt="ROSE">
+                      <img src="./pic/spotfy/rose.jpg" alt="ROSE" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -119,7 +128,7 @@
                       <p>Artist</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/lana.jpg" alt="Lana Del Rey">
+                      <img src="./pic/spotfy/lana.jpg" alt="Lana Del Rey" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -127,7 +136,7 @@
                       <p>Artist</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/rokit bay.jpg" alt="Rokit Bay">
+                      <img src="./pic/spotfy/rokit bay.jpg" alt="Rokit Bay" loading="lazy">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -148,7 +157,7 @@
                       <p>290</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/hit me hard and soft.jpg" alt="hit me hard and soft by billie eilish">
+                      <img src="./pic/spotfy/hit me hard and soft.jpg" alt="Hit me hard and soft by Billie Eilish">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -172,7 +181,7 @@
                       <p>Rokit Bay</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/gnx.jpg" alt="Davaidasha">
+                      <img src="./pic/spotfy/gnx.jpg" alt="GNX by Kendrick Lamar">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -180,7 +189,7 @@
                       <p>Kendrick Lamar</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/muse.jpg" alt="Rokit Bay">
+                      <img src="./pic/spotfy/muse.jpg" alt="Muse by Jimin">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -193,42 +202,42 @@
               <h2>Popular radio</h2>
               <div class="card">
                   <div class="item">
-                      <img src="./pic/spotfy/en (1).jpg" alt="O by 290">
+                      <img src="./pic/spotfy/en (1).jpg" alt="Play radio Calvin Harris">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>With Calvin Harris, Avicii, Pitbull and more</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/en (2).jpg" alt="hit me hard and soft by billie eilish">
+                      <img src="./pic/spotfy/en (2).jpg" alt="Play radio Sash">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>With Sash., Vande, Vandebo and more</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/en (3).jpg" alt="Gund by AM-C">
+                      <img src="./pic/spotfy/en (3).jpg" alt="Play radio Davaidasha">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>With AM-C, Davaidasha, Vande and more</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/en (4).jpg" alt="ODYSSEY by Rokit Bay">
+                      <img src="./pic/spotfy/en (4).jpg" alt="Play radio Vande">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>With AM-C, Vande, 290 and more</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/en.jpg" alt="Davaidasha">
+                      <img src="./pic/spotfy/en.jpg" alt="Play radio ThunderZ">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>With Davaidasha, ThunderZ, Vandebo and more</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/en (5).jpg" alt="Rokit Bay">
+                      <img src="./pic/spotfy/en (5).jpg" alt="Play radio">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -240,42 +249,42 @@
               <h2>Featured Chart</h2>
               <div class="card">
                   <div class="item">
-                      <img src="./pic/spotfy/region_global_default (1).jpg" alt="O by 290">
+                      <img src="./pic/spotfy/region_global_default (1).jpg" alt="Weekly update">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Your weekly update of the most played...</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/region_us_default (1).jpg" alt="hit me hard and soft by billie eilish">
+                      <img src="./pic/spotfy/region_us_default (1).jpg" alt="Weekly update">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Your weekly update of the most played...</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/region_global_default.jpg" alt="Gund by AM-C">
+                      <img src="./pic/spotfy/region_global_default.jpg" alt="Most played">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Your daily update os the most played...</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/region_us_default.jpg" alt="ODYSSEY by Rokit Bay">
+                      <img src="./pic/spotfy/region_us_default.jpg" alt="Most played">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Your daily update of the most played...</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/region_global_default (2).jpg" alt="Davaidasha">
+                      <img src="./pic/spotfy/region_global_default (2).jpg" alt="Daily update">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Your daily update of the most viral track...</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/region_us_default (2).jpg" alt="Rokit Bay">
+                      <img src="./pic/spotfy/region_us_default (2).jpg" alt="Daily update">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -287,42 +296,42 @@
               <h2>2024 Wrapped</h2>
               <div class="card">
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 1.jpg" alt="O by 290">
+                      <img src="./pic/spotfy/wrapped 1.jpg" alt="2024 playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Songs we slept to in 2024</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 2.jpg" alt="hit me hard and soft by billie eilish">
+                      <img src="./pic/spotfy/wrapped 2.jpg" alt="2024 playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>RNB X Presents Best Songs of 2024</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 3.jpg" alt="Gund by AM-C">
+                      <img src="./pic/spotfy/wrapped 3.jpg" alt="Jazz 2024 playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>State of Jazz Presents Best Jazz of 2024</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 4.jpg" alt="ODYSSEY by Rokit Bay">
+                      <img src="./pic/spotfy/wrapped 4.jpg" alt="2024 Global playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>Top Artist of 2024 Global</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 5.jpg" alt="Davaidasha">
+                      <img src="./pic/spotfy/wrapped 5.jpg" alt="Ambient 2024 playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
                       <p>KBest of Ambient X 2024</p>
                   </div>
                   <div class="item">
-                      <img src="./pic/spotfy/wrapped 6.jpg" alt="Rokit Bay">
+                      <img src="./pic/spotfy/wrapped 6.jpg" alt="Lofi 2024 playlist">
                       <div class="play-bttn">
                           <i class="fa-solid fa-play"></i>
                       </div>
@@ -331,54 +340,52 @@
               </div>
           </div>
 
-          <div class="footer">
+          <div class="footer" role="contentinfo">
             <div class="footer-content">
                <div class="footer-column">
                   <h4>Company</h4>
                   <ul>
-                     <li><a href="#">About</a></li>
-                     <li><a href="#">Jobs</a></li>
-                     <li><a href="#">For the Record</a></li>
+                     <li><a href="https://www.spotify.com/mn/about-us/contact/">About</a></li>
+                     <li><a href="https://www.lifeatspotify.com/">Jobs</a></li>
+                     <li><a href="https://newsroom.spotify.com/">For the Record</a></li>
                   </ul>
                </div>
                <div class="footer-column">
                   <h4>Communities</h4>
                   <ul>
-                     <li><a href="#">For Artists</a></li>
-                     <li><a href="#">Developers</a></li>
-                     <li><a href="#">Advertising</a></li>
-                     <li><a href="#">Investors</a></li>
-                     <li><a href="#">Vendors</a></li>
+                     <li><a href="https://artists.spotify.com/">For Artists</a></li>
+                     <li><a href="https://developer.spotify.com/">Developers</a></li>
+                     <li><a href="https://ads.spotify.com/">Advertising</a></li>
+                     <li><a href="https://investors.spotify.com/">Investors</a></li>
+                     <li><a href="https://spotifyforvendors.com/">Vendors</a></li>
                   </ul>
                </div>
                <div class="footer-column">
                   <h4>Useful Links</h4>
                   <ul>
-                     <li><a href="#">Support</a></li>
-                     <li><a href="#">Free Mobile App</a></li>
+                     <li><a href="https://support.spotify.com/">Support</a></li>
+                     <li><a href="https://www.spotify.com/mn/free/">Free Mobile App</a></li>
                   </ul>
                </div>
                <div class="footer-column">
                   <h4>Spotify Plans</h4>
                   <ul>
-                     <li><a href="#">Premium Individual</a></li>
-                     <li><a href="#">Premium Duo</a></li>
-                     <li><a href="#">Premium Family</a></li>
-                     <li><a href="#">Premium Student</a></li>
-                     <li><a href="#">Spotify Free</a></li>
+                     <li><a href="https://www.spotify.com/mn/premium/#ref=spotifycom_footer_premium_individual">Premium Individual</a></li>
+                     <li><a href="https://www.spotify.com/mn/duo/#ref=spotifycom_footer_premium_duo">Premium Duo</a></li>
+                     <li><a href="https://www.spotify.com/mn/family/#ref=spotifycom_footer_premium_family">Premium Family</a></li>
+                     <li><a href="https://www.spotify.com/mn/student/#ref=spotifycom_footer_premium_student">Premium Student</a></li>
+                     <li><a href="https://www.spotify.com/mn/free/#ref=spotifycom_footer_free">Spotify Free</a></li>
                   </ul>
                </div>
                <div class="footer-icons">
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                  <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/spotify"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://x.com/spotify"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.facebook.com/Spotify"><i class="fa-brands fa-facebook"></i></a>
                </div>
             </div>
+            <p class="copyright">© 2024 Spotify AB</p>
          </div>
         </div>
-
-       
-        
       </div>
     </div>
 </body>

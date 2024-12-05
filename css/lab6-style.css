@@ -606,6 +606,15 @@ body{
   color: #1db954;
 }
 
+.copyright {
+  box-sizing: border-box;
+  color: #606060;
+  text-align: left;
+  justify-content: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 
 
 
