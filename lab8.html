@@ -86,11 +86,17 @@
 
       function hugatsaa() {
         let zai = parseFloat(document.getElementById("zai").value);
+        
         const chono = 25;
         const tuulai = 18;
+        
         let hurdZ = chono - tuulai;
+        
         const t = (zai / hurdZ) * 60;
-        document.getElementById("hariu2").textContent = `Гүйцэх хугацаа: ${t.toFixed(2)} минут`;
+        const min = Math.floor(t);
+        const sec = Math.round((t-min)*60);
+
+        document.getElementById("hariu2").textContent = `Гүйцэх хугацаа: ${min} минут ${sec} секунд`;
         } // t-g 2 ornii nariiwchlaltaigaar hewlene.
         
         
