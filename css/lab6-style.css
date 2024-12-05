@@ -357,14 +357,14 @@ body{
   margin-bottom: 30px;
 }
 
-.popular-artists h2 {
+.popular-artists h1 {
   margin: 5px 10px; 
   color: #e8e8e8;
   font-size: 22px;
   font-weight: bold;
 }
 
-.popular-artists h2:hover {
+.popular-artists h1:hover {
   text-decoration: underline;
 }
 
@@ -446,7 +446,7 @@ body{
   gap: 15px;
 }
 
-.popular-albums h2, .popular-radio h2, .featured-charts h2, .wrapped h2 {
+.popular-albums h1, .popular-radio h1, .featured-charts h1, .wrapped h1 {
   margin: 5px 10px; 
   color: #e8e8e8;
   font-size: 22px;
@@ -493,10 +493,10 @@ body{
   margin-bottom: 8px;
 }
 
-.popular-artists h2:hover,
-.popular-albums h2:hover,
-.popular-radio h2:hover,
-.featured-charts h2:hover,
+.popular-artists h1:hover,
+.popular-albums h1:hover,
+.popular-radio h1:hover,
+.featured-charts h1:hover,
 .wrapper{
   text-decoration: underline;
 }
