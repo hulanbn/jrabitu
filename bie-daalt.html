@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bie daalt</title>
+    <link rel="stylesheet" href="./css/bie-daalt.css">
+</head>
+<body>
+    <header>
+        <h1>ccc</h1>
+    </header>
+    <main>
+        <!-- Main Category Buttons -->
+        <div id="main-menu">
+            <button class="category-btn" data-category="movies" onclick="openGenrePopup('movies')">Movies</button>
+            <button class="category-btn" data-category="music" onclick="openGenrePopup('music')">Music</button>
+            <button class="category-btn" data-category="books" onclick="openGenrePopup('books')">Books</button>            
+            <button class="category-btn" data-category="series" onclick="openGenrePopup('books')">Series</button>
+            <button class="category-btn" data-category="anime" onclick="openGenrePopup('books')">Anime</button>
+            <button class="category-btn" data-category="coffee-shop" onclick="openGenrePopup('books')">Coffee shop</button>
+            <button class="category-btn" data-category="food" onclick="openGenrePopup('books')">Food</button>
+            <button class="category-btn" data-category="travel" onclick="openGenrePopup('books')">travel</button>
+            <button class="category-btn" data-category="drink" onclick="openGenrePopup('books')">drink</button>
+            <button class="category-btn" data-category="date" onclick="openGenrePopup('books')">date</button>
+        </div>
+
+        <!-- Genre Pop-Up -->
+        <div id="genre-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2 id="genre-title">Select a Genre</h2>
+                <div id="genre-options">
+                    <!-- Genre buttons will be dynamically added -->
+                </div>
+                <button id="close-genre" class="close-btn" onclick="closeGenrePopup()">Close</button>
+            </div>
+        </div>
+
+        <!-- Result Pop-Up -->
+        <div id="result-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2 id="result-title">Result</h2>
+                <img id="result-image" src="" alt="Result Image">
+                <p id="result-details"></p>
+                <button id="close-result" class="close-btn" onclick="closeResultPopup()">Close</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Chillrey. Find your chill!</p>
+    </footer>
+    <script src="./js/bby.js"></script>
+</body>
+</html>
