@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab - 9 Hangman Game</title>
-    <link rel="icon" type="image/icon" href="assets/img/favicon.png" />
+    <title>hangman game</title>
     <link rel="stylesheet" href="./css/lab9style.css">
-    <script src="./js/lab9.js"></script>
+    <script defer src="./js/lab9.js"></script>
 </head>
 <body>
-    <div class="main-container">
-        <h1>Hangman Game</h1>
-        <p class="durem">
-            Өгсөн сэдвийн дагуу үсгэн дээр дарж үгийг таагаарай. <br/>
-            Хэрэв буруу үсэг байвал хүний биеийн нэг хэсэг зурагдах бөгөөд <br/>
-            Хүн бүрэн зурагдсан тохиолдолд хожигдох болно. <br/>
-            Нийт 5 амьтай байна. <br/>
-        </p>
+<main class="container">
+    <section class="options">
+        <h3>ТӨРЛӨӨ СОНГОНО УУ</h3>
+        <div class="categories-container"></div>
+    </section>
 
-        <p class="sedew"> </p>
-        <div class="useg"></div>
-        <p class="ug"></p>
-        <p class="ami"></p>
+    <section class="hint-container hide">
+        <button class="hint-btn">Хинт</button>
+        <p class="hint-text hide"></p>
+    </section>
 
-        <div class="bttn">
-            <button type="button" class="hint-button">Хинт</button>
-            <button type="button" class="reset-button">Дахин эхлэх</button>
-        </div>
-    </div>
+    <!-- Lives Section -->
+    <section class="lives-container hide">
+        <p class="lives-text">Амь: 5</p>
+    </section>
 
-    <div class="game-container"> <!--model backdrop-->
-    <div id="hangman"></div> <!--model wrap--> 
-        <div id="question"></div> <!--model text-->
-        <button type="button" class="close">Хаах</button>
-    </div>
+    <section class="letters hide"></section>
+    <section class="user-input"></section>
+    <canvas class="hangman-canvas"></canvas>
+
+    <section class="new-game hide">
+        <div class="result-text"></div>
+        <button class="new-game-btn">Шинээр эхлүүлэх</button>
+    </section>
+</main>
 </body>
 </html>

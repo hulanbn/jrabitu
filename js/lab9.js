@@ -1,196 +1,318 @@
-const data = [
-  {
-    sedew: "Амьтан",
-    ug: ["rabbit", "bear", "giraffe", "spider", "wolf", "elephant"],
-    hint: ["긴 귀가 특징입니다.", "100일 동안 쑥과 마늘만을 먹고 인간이 되었다고 합니다.", "목이 매우 길고 튼튼합니다. 싸울 때도 목으로 싸웁니다.", "눈도 많고, 다리도 많습니다.", "무리지어 생활합니다. 보름달을 보면 변신할지도 모릅니다.", "몸집이 아주 큽니다. 긴 코가 특징입니다."],
-  },
-  {
-    sedew: "영화",
-    ug: ["parasite", "her", "titanic", "ai", "interstellar", "joker"],
-    hint: ["오~ 너는 계획이 다 있구나?", "당신이 누가 되건, 당신이 어디에 있건. 사랑을 보낸다!", "그래서 이게 당신들이 말하는 가라앉지 않는 배야?", "푸른 요정님, 제발 제가 인간이 되게 해주세요.", "우린 답을 찾을 것이다. 늘 그랬듯이.", "내 죽음이 내 삶보다 더 가치있기를."],
-  },
-];
+//Initial References
+const letterContainer = document.querySelector(".letters");
+const optionsContainer = document.querySelector(".options");
+const userInputSection = document.querySelector(".user-input");
+const newGameContainer = document.querySelector(".new-game");
+const newGameButton = document.querySelector(".new-game-btn");
+const canvas = document.querySelector(".hangman-canvas");
+const resultText = document.querySelector(".result-text");
 
-const useg = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const hintContainer = document.querySelector(".hint-container");
+const hintButton = document.querySelector(".hint-btn");
+const hintText = document.querySelector(".hint-text");
 
-let sedew, ug, hint, ami, usegTowch, zai, correctCounter, drawOrder;
+const livesContainer = document.querySelector(".lives-container");
+const livesText = document.querySelector(".lives-text");
 
-// Get elements
-const buttonsWrap = document.querySelector(".buttons");
-const topicText = document.querySelector(".topic");
-const wordText = document.querySelector(".word");
-const liveText = document.querySelector(".lives");
-const canvas = document.querySelector("#canvas");
-const getHint = document.querySelector(".btn.hint");
-const reset = document.querySelectorAll(".btn.reset");
-const backdrop = document.querySelector(".modal-backdrop");
-const modalWrap = document.querySelector(".modal-wrap");
-const modalText = document.querySelector(".modal-text");
-const modalClose = document.querySelector(".modal-close");
-
-// Get random data
-function getRandomData() {
-  const value = data[Math.floor(Math.random() * data.length)];
-  const wordIndex = Math.floor(Math.random() * value.word.length);
-  return {
-    topic: value.topic,
-    word: value.word[wordIndex],
-    hint: value.hint[wordIndex],
-  };
-}
-
-// Create alphabet buttons
-function createButtons() {
-  alphabet.forEach((letter) => {
-    const button = document.createElement("button");
-    button.innerHTML = letter;
-    buttonsWrap.appendChild(button);
-  });
-}
-
-// Create blank
-function createBlank() {
-  [...word].forEach(() => {
-    const blank = document.createElement("span");
-    blank.innerHTML = "_";
-    wordText.appendChild(blank);
-  });
-}
-
-// Set canvas
-function setCanvas() {
-  const context = canvas.getContext("2d");
-  context.beginPath();
-}
-
-// Draw path
-function draw(pathFromx, pathFromy, pathTox, pathToy) {
-  const context = canvas.getContext("2d");
-  context.moveTo(pathFromx, pathFromy);
-  context.lineTo(pathTox, pathToy);
-  context.stroke();
-}
-
-const frame1 = () => draw(0, 130, 300, 130);
-
-const frame2 = () => draw(80, 10, 80, 129);
-
-const frame3 = () => draw(80, 10, 150, 10);
-
-const frame4 = () => draw(150, 10, 150, 20);
-
-const head = () => {
-  const context = canvas.getContext("2d");
-  context.beginPath();
-  context.arc(150, 35, 15, 0, Math.PI * 2);
-  context.stroke();
+//Categories and words (Mongolian words for categories)
+let options = {
+  жимс: ["алим", "нэрс", "мандарин", "хан боргоцой", "анар", "тарвас"],
+  амьтан: ["хавтгай", "янгир", "цоохор ирвэс", "ятуу", "тогоруу", "хандгай"],
+  кино: ["Mean Girls", "Howl's Moving Castle", "Me before you", "Parasite", "Divergent", "home alone"],
+  дуучин: ["Billie_Eilish", "Lana_Del_Rey", "Rose", "Annie_Lennox", "Artemas", "Chase_Atlantic "]
 };
 
-const torso = () => draw(150, 50, 150, 85);
+let hints = {
+  жимс: [
+    "өдөрт 1-ийг идвэл эмч юу ч билээ",
+    "жижигхэн хөх цэнхэр өнгөтэй",
+    "арилгаж иддэг улбар шар",
+    "i have a pen i have --",
+    "колаген нтр гээл байдаг даа",
+    "Ховдын--"
+  ],
+  амьтан: [
+    "---",
+    "---",
+    "---",
+    "---",
+    "---",
+    "--"
+  ],  
+  кино: [
+    "omg i love your skirt where did you get it?",
+    "calcifer sophie",
+    "aimr sad zaluu ni uhchdeg, ghde bayn baisan bolohoor aimr ih mungu uldeedeg",
+    "аав нь баян айлын агуулахад амьдраад дуусдаг",
+    "энийг би ч мэдэхгүй юм байна аа",
+    "шинэ жилийн сүлд кино"
+  ],  
+  дуучин: [
+    "im bad guy",
+    "pepsi cola",
+    "kissy face kissy face",
+    "энийг угаасаа бараг таахгүй дээ",
+    "сая зун трэнд болоод байсан дууны эзэн",
+    "swim ээр нь мэднэ дээ"
+  ],
+};
 
-const leftArm = () => draw(150, 57, 140, 87);
+//Game variables
+let winCount = 0;
+let count = 0; // Wrong attempts
+let chosenWord = "";
+let chosenHint = "";
+let totalLives = 5; // Total lives
+let totalLetters = 0; // Count only letters for win condition
 
-const rightArm = () => draw(150, 57, 160, 87);
+//Mongolian Cyrillic Alphabet
+const mongolianLetters = [
+  "А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","Ө",
+  "П","Р","С","Т","У","Ү","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"
+];
 
-const leftLeg = () => draw(150, 85, 145, 122);
-
-const rightLeg = () => draw(150, 85, 155, 122);
-
-drawOrder = [frame1, frame2, frame3, frame4, head, torso, leftArm, rightArm, leftLeg, rightLeg];
-
-// Game over
-function gameOver() {
-  drawOrder[9 - lives]();
-  modalText.innerHTML = "당신은 졌습니다!<br />괜찮습니다. 다시 시작할 수 있어요.<div class='btn-wrap'><button type='button' class='btn reset' onclick='resetGame()'>다시하기</button><button type='button' class='btn reset' onclick='resetGame()'>그만하기</button></div>";
-  modalClose.style.display = "none";
-  modal();
+// English Alphabet [A-Z]
+const englishLetters = [];
+for (let i = 65; i < 91; i++) {
+  englishLetters.push(String.fromCharCode(i));
 }
 
-// Game clear
-function gameClear() {
-  modalText.innerHTML = `정답 : <span class='answer'>${word}</span><br />당신은 이겼습니다!<br />축하드려요! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧<div class='btn-wrap'><button type='button' class='btn reset' onclick='resetGame()'>다시하기</button><button type='button' class='btn reset' onclick='resetGame()'>그만하기</button></div>`;
-  modalClose.style.display = "none";
-  modal();
-}
+//Display options (categories)
+const displayOptions = () => {
+  const categoriesContainer = optionsContainer.querySelector(".categories-container");
+  categoriesContainer.innerHTML = "";
+  
+  for (let value in options) {
+    let button = document.createElement("button");
+    button.classList.add("category-btn");
+    button.innerText = value;
+    button.addEventListener("click", () => generateWord(value));
+    categoriesContainer.appendChild(button);
+  }
+};
 
-// Check
-function check() {
-  letterBtn = document.querySelectorAll(".buttons button");
-  blanks = document.querySelectorAll(".word span");
+//Create Keyboard based on category
+const createKeyboard = (category) => {
+  // Clear previous letters
+  letterContainer.innerHTML = "";
 
-  letterBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.disabled = true;
-      const guessLetter = btn.innerHTML;
+  // Determine which keyboard to use
+  let lettersArray;
+  if (category === "жимс" || category === "амьтан") {
+    // Use Mongolian letters
+    lettersArray = mongolianLetters;
+  } else {
+    // Use English letters
+    lettersArray = englishLetters;
+  }
 
-      if ([...word].indexOf(guessLetter) != -1) {
-        // true
-        [...word].forEach((correctLetter, i) => {
-          if (correctLetter == guessLetter) {
-            blanks[i].innerHTML = correctLetter;
-            correctCounter += 1;
-            correctCounter == word.length && gameClear();
+  // Create buttons from the chosen alphabet
+  lettersArray.forEach((letter) => {
+    let button = document.createElement("button");
+    button.classList.add("letter-btn");
+    button.innerText = letter;
+
+    button.addEventListener("click", () => {
+      let charArray = chosenWord.split("");
+      const guessedLetter = letter.toUpperCase();
+      let dashes = document.getElementsByClassName("dashes");
+
+      // Check if guessed letter is in the word
+      if (charArray.includes(guessedLetter)) {
+        //Correct guess
+        charArray.forEach((char, index) => {
+          if (char === guessedLetter) {
+            dashes[index].innerText = char;
+            winCount += 1;
+            if (winCount === totalLetters) {
+              resultText.innerHTML = `<h2 class='win-msg'>Та яллаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
+              blocker();
+            }
           }
         });
       } else {
-        // false
-        liveText.innerHTML = `남은 목숨 : <strong>${(lives -= 1)}</strong>`;
-        lives < 1 ? gameOver() : drawOrder[9 - lives]();
+        //Wrong guess
+        count += 1;
+        drawMan(count);
+        // Update lives left
+        livesText.innerText = `Амь: ${totalLives - count}`;
+
+        if (count === totalLives) {
+          // Player loses
+          resultText.innerHTML = `<h2 class='lose-msg'>Та ялагдлаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
+          blocker();
+        }
       }
+      //disable clicked button after guess
+      button.disabled = true;
     });
+
+    letterContainer.append(button);
   });
-}
+};
 
-// Play
-function play() {
-  const randomData = getRandomData();
-  correctCounter = 0;
-  lives = 10;
-  ({ topic, word, hint } = randomData);
+//Block all the Buttons
+const blocker = () => {
+  let optionsButtons = document.querySelectorAll(".category-btn");
+  let letterButtons = document.querySelectorAll(".letter-btn");
 
-  topicText.innerHTML = `주제는 ${topic}입니다.`;
-  liveText.innerHTML = `남은 목숨 : <strong>${lives}</strong>`;
-  createButtons();
-  createBlank();
-  setCanvas();
-  check();
-}
-
-// Modal
-function modal() {
-  backdrop.classList.add("active");
-  modalWrap.classList.add("active");
-  modalClose.addEventListener("click", () => {
-    modalText.innerHTML = "";
-    modalWrap.classList.remove("active");
-    backdrop.classList.remove("active");
+  //disable all options
+  optionsButtons.forEach((button) => {
+    button.disabled = true;
   });
-}
 
-// Hint
-getHint.addEventListener("click", () => {
-  modalText.innerHTML = hint;
-  modal();
+  //disable all letters
+  letterButtons.forEach((button) => {
+    button.disabled = true;
+  });
+
+  newGameContainer.classList.remove("hide");
+};
+
+//Word Generator
+const generateWord = (optionValue) => {
+  let optionsButtons = document.querySelectorAll(".category-btn");
+  optionsButtons.forEach((button) => {
+    if (button.innerText.toLowerCase() === optionValue) {
+      button.classList.add("active");
+    }
+    button.disabled = true;
+  });
+
+  // Show letters, hint container, and lives
+  letterContainer.classList.remove("hide");
+  hintContainer.classList.remove("hide");
+  livesContainer.classList.remove("hide");
+  userInputSection.innerText = "";
+
+  let optionArray = options[optionValue];
+  let randomIndex = Math.floor(Math.random() * optionArray.length);
+  
+  // Trim and uppercase for consistent checking
+  chosenWord = optionArray[randomIndex].trim().toUpperCase();
+  chosenHint = hints[optionValue][randomIndex];
+
+  // Calculate total letters (A-ZА-ЯӨҮЁ)
+  totalLetters = chosenWord.split('').filter(ch => /[A-ZА-ЯӨҮЁ]/i.test(ch)).length;
+
+  // Show 5 lives initially
+  livesText.innerText = `Амь: ${totalLives - count}`;
+
+  // Build the displayItem
+  let displayItem = '';
+  for (let char of chosenWord) {
+    if (/[A-ZА-ЯӨҮЁ]/i.test(char)) {
+      // It's a letter: underscore it
+      displayItem += `<span class="dashes">&nbsp;</span>`;
+    } else if (char === ' ') {
+      // It's a space
+      displayItem += `<span class="dashes-space">&nbsp;</span>`;
+    } else {
+      // Punctuation or other chars, show directly (revealed from start)
+      displayItem += `<span class="dashes punct">${char}</span>`;
+    }
+  }
+
+  userInputSection.innerHTML = displayItem;
+
+  // Hide hint text initially
+  hintText.classList.add("hide");
+
+  // Create the keyboard based on the chosen category
+  createKeyboard(optionValue);
+};
+
+//Initial Function (Called when page loads/user presses new game)
+const initializer = () => {
+  winCount = 0;
+  count = 0;
+  chosenWord = "";
+  chosenHint = "";
+  totalLetters = 0;
+  livesText.innerText = `Амь: ${totalLives}`; // reset lives display to full
+
+  //Reset display
+  userInputSection.innerHTML = "";
+  letterContainer.classList.add("hide");
+  newGameContainer.classList.add("hide");
+  hintContainer.classList.add("hide");
+  livesContainer.classList.add("hide");
+  hintText.classList.add("hide");
+  hintText.innerText = "";
+  letterContainer.innerHTML = "";
+
+  displayOptions();
+  let { initialDrawing } = canvasCreator();
+  initialDrawing();
+};
+
+//Canvas
+const canvasCreator = () => {
+  let context = canvas.getContext("2d");
+  context.beginPath();
+  context.strokeStyle = "#000";
+  context.lineWidth = 2;
+
+  const drawLine = (fromX, fromY, toX, toY) => {
+    context.moveTo(fromX, fromY);
+    context.lineTo(toX, toY);
+    context.stroke();
+  };
+
+  const head = () => {
+    context.beginPath();
+    context.arc(70, 30, 10, 0, Math.PI * 2, true);
+    context.stroke();
+  };
+
+  const body = () => drawLine(70, 40, 70, 80);
+  const leftArm = () => drawLine(70, 50, 50, 70);
+  const rightArm = () => drawLine(70, 50, 90, 70);
+  const leftLeg = () => drawLine(70, 80, 50, 110);
+
+  //5 lives total: head(1), body(2), leftArm(3), rightArm(4), leftLeg(5)
+
+  const initialDrawing = () => {
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    drawLine(10, 130, 130, 130);
+    drawLine(10, 10, 10, 131);
+    drawLine(10, 10, 70, 10);
+    drawLine(70, 10, 70, 20);
+  };
+
+  return { initialDrawing, head, body, leftArm, rightArm, leftLeg };
+};
+
+//Draw the man based on count
+const drawMan = (count) => {
+  let { head, body, leftArm, rightArm, leftLeg } = canvasCreator();
+  switch (count) {
+    case 1:
+      head();
+      break;
+    case 2:
+      body();
+      break;
+    case 3:
+      leftArm();
+      break;
+    case 4:
+      rightArm();
+      break;
+    case 5:
+      leftLeg();
+      break;
+    default:
+      break;
+  }
+};
+
+//Show hint on hint button click
+hintButton.addEventListener("click", () => {
+  hintText.innerText = chosenHint;
+  hintText.classList.remove("hide");
 });
 
-// Reset
-function resetGame() {
-  buttonsWrap.innerHTML = "";
-  wordText.innerHTML = "";
-  backdrop.classList.remove("active");
-  modalWrap.classList.remove("active");
-  modalClose.style.display = "block";
-  const context = canvas.getContext("2d");
-  context.clearRect(0, 0, 400, 400);
-  play();
-}
-
-reset.forEach((btn) => {
-  btn.addEventListener("click", resetGame);
-});
-
-play();
-
-
-
-Resources1× 0.5× 0.25×Rerun
+//New Game
+newGameButton.addEventListener("click", initializer);
+window.onload = initializer;

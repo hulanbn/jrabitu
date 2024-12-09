@@ -1,0 +1,166 @@
+{
+  "movies": {
+    "action": {
+      "title": "Inception",
+      "details": "A mind-bending thriller by Christopher Nolan.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "historic": {
+      "title": "Schindler's List",
+      "details": "A poignant tale from World War II.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "sci-fi": {
+      "title": "Interstellar",
+      "details": "A journey beyond the stars.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "emotional": {
+      "title": "The Pursuit of Happyness",
+      "details": "A heartwarming story of perseverance.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "random": {
+      "title": "Everything Everywhere All at Once",
+      "details": "A multiverse adventure like no other.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "music": {
+    "jazz": {
+      "title": "Miles Davis - Kind of Blue",
+      "details": "A jazz masterpiece.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "k-pop": {
+      "title": "BTS - Dynamite",
+      "details": "A global pop sensation.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "holiday": {
+      "title": "Mariah Carey - All I Want for Christmas Is You",
+      "details": "The ultimate festive anthem.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "mood_boost": {
+      "title": "Pharrell Williams - Happy",
+      "details": "An instant mood booster.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "books": {
+    "fiction": {
+      "title": "1984 by George Orwell",
+      "details": "A dystopian classic.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "self-help": {
+      "title": "Atomic Habits by James Clear",
+      "details": "Transform your habits and life.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "adventure": {
+      "title": "The Hobbit by J.R.R. Tolkien",
+      "details": "A classic fantasy adventure.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "series": {
+    "thriller": {
+      "title": "Breaking Bad",
+      "details": "A tale of transformation and crime.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "fantasy": {
+      "title": "Game of Thrones",
+      "details": "A fantasy epic.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "comedy": {
+      "title": "Brooklyn Nine-Nine",
+      "details": "A hilarious police sitcom.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "anime": {
+    "slice_of_life": {
+      "title": "Your Lie in April",
+      "details": "A touching story of music and love.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "adventure": {
+      "title": "Attack on Titan",
+      "details": "A thrilling battle for survival.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "travel": {
+    "beaches": {
+      "title": "Maldives",
+      "details": "Pristine blue waters and sandy shores.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "historic_sites": {
+      "title": "Machu Picchu",
+      "details": "Explore ancient Incan ruins.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "dates": {
+    "romantic": {
+      "title": "Dinner by the Eiffel Tower",
+      "details": "A magical Parisian night.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "adventurous": {
+      "title": "Hot Air Balloon Ride",
+      "details": "A unique way to see the world.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "food": {
+    "italian": {
+      "title": "Margherita Pizza",
+      "details": "A classic Italian delight.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "fusion": {
+      "title": "Korean-Mexican Tacos",
+      "details": "A bold culinary experiment.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "coffee_shop": {
+    "aesthetic": {
+      "title": "Café Fleur",
+      "details": "A beautifully decorated spot.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "cozy": {
+      "title": "Cozy Brews",
+      "details": "A perfect corner for book lovers.",
+      "image": "https://via.placeholder.com/150"
+    }
+  },
+  
+  "ootd": {
+    "y2k": {
+      "title": "Metallic Crop Top and Baggy Jeans",
+      "details": "A retro-futuristic vibe.",
+      "image": "https://via.placeholder.com/150"
+    },
+    "seasonal": {
+      "title": "Autumn Layers",
+      "details": "Plaid scarves and warm sweaters.",
+      "image": "https://via.placeholder.com/150"
+    }
+  }
+}
