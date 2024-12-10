@@ -11,7 +11,7 @@
     <h1>Мэдээний жагсаалт</h1>
   </header>
   <main>
-    <div class="type_card">
+    <div class="type_card"> <!--news list-->
       <ul class="list_type_card" id="news-list"></ul>
     </div>
   </main>
@@ -33,7 +33,7 @@
           const description = items[i].getElementsByTagName("description")[0]?.textContent || "No description available";
           const pubDate = items[i].getElementsByTagName("pubDate")[0]?.textContent || "No date available";
 
-          const thumbnailURL = "https://via.placeholder.com/300x150?text=No+Image";
+          const thumbnailURL = "https://content.ikon.mn/news/2023/7/6/phfzmy_MPA_5210_h678.jpg";
 
           const listItem = document.createElement("li");
           listItem.classList.add("item_card");

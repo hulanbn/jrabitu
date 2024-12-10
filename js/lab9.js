@@ -1,4 +1,5 @@
-//Initial References
+//document.querySelector(): CSS selector hamgiin ehnii taarsan elemtiig songono -dom
+
 const letterContainer = document.querySelector(".letters");
 const optionsContainer = document.querySelector(".options");
 const userInputSection = document.querySelector(".user-input");
@@ -14,70 +15,74 @@ const hintText = document.querySelector(".hint-text");
 const livesContainer = document.querySelector(".lives-container");
 const livesText = document.querySelector(".lives-text");
 
-//Categories and words (Mongolian words for categories)
+
+//songolt bolon hintiig aguulsan heseg
 let options = {
   жимс: ["алим", "нэрс", "мандарин", "хан боргоцой", "анар", "тарвас"],
-  амьтан: ["хавтгай", "янгир", "цоохор ирвэс", "ятуу", "тогоруу", "хандгай"],
+  амьтан: ["тэмээ", "янгир", "цоохор ирвэс", "ятуу", "тогоруу", "хандгай"],
   кино: ["Mean Girls", "Howl's Moving Castle", "Me before you", "Parasite", "Divergent", "home alone"],
   дуучин: ["Billie_Eilish", "Lana_Del_Rey", "Rose", "Annie_Lennox", "Artemas", "Chase_Atlantic "]
 };
 
 let hints = {
   жимс: [
-    "өдөрт 1-ийг идвэл эмч юу ч билээ",
-    "жижигхэн хөх цэнхэр өнгөтэй",
-    "арилгаж иддэг улбар шар",
-    "i have a pen i have --",
-    "колаген нтр гээл байдаг даа",
-    "Ховдын--"
+    "модонд ургадаг бөгөөд ихэвчлэн улаан, ногоон эсвэл шар өнгөтэй байдаг",
+    "жижиг, бөөрөнхий бөгөөд хөх өнгөтэй, ойд ургадаг",
+    "нимгэн хальстай, улбар шар өнгөтэй, амттай бөгөөд арилгахад амархан",
+    "урт навчтай ургамал дээр ургадаг, гадар нь хатуу бөгөөд дотор нь шар амттай хэсэгтэй",
+    "улаан өнгөтэй, дотор нь олон жижиг үртэй бөгөөд амт нь чихэрлэг эсвэл исгэлэн байдаг",
+    "том, бөөрөнхий, доторх нь улаан, гаднах нь ногоон өнгөтэй бөгөөд зуны улиралд хамгийн түгээмэл байдаг"
   ],
   амьтан: [
-    "---",
-    "---",
-    "---",
-    "---",
-    "---",
-    "--"
+    "халуун хуурай газарт амьдардаг, нуруун дээр өөх хуримтлагдсан байдаг ",
+    "өндөр уулын хадан дээр амьдардаг бөгөөд урт, тахир эвэртэй",
+    "Өндөр уулын цасан бүрхүүлтэй газар нутагт амьдардаг, маш цөөн тоотой ховор амьтан",
+    "ой модонд амьдардаг бөгөөд түүний өдийг шувууны чимэглэлд их хэрэглэдэг",
+    "Урт хүзүү, урт хөлтэй ба нүүдлийн амьдралтай шувуу",
+    "ой модонд амьдардаг бөгөөд хамгийн том эвэртэй хөхтөн амьтдын нэг"
   ],  
   кино: [
-    "omg i love your skirt where did you get it?",
-    "calcifer sophie",
-    "aimr sad zaluu ni uhchdeg, ghde bayn baisan bolohoor aimr ih mungu uldeedeg",
-    "аав нь баян айлын агуулахад амьдраад дуусдаг",
-    "энийг би ч мэдэхгүй юм байна аа",
-    "шинэ жилийн сүлд кино"
+    "ахлах сургуулийн охидын хоорондын өрсөлдөөн, нөхөрлөлийн талаар өгүүлдэг",
+    "аниме кино бөгөөд нисдэг шидэт байшин, шидтэн, зоригтой охины тухай өгүүлдэг",
+    "хайр, амьдралын утга учрын талаар, хөгжлийн бэрхшээлтэй залуу болон түүнийг асрагч охины түүхийг өгүүлдэг",
+    " баян, ядуу хоёр гэр бүлийн харилцааны тухай өгүүлдэг бөгөөд Оскарын шагнал хүртсэн",
+    "ирээдүйд ангилалд хуваагдсан нийгэмд өөрийн онцгой чадвараа нуудаг охины түүхийг өгүүлдэг",
+    "зул сарын үеэр гэртээ ганцаараа үлдсэн жаал хүүгийн адал явдлын тухай өгүүлдэг"
   ],  
   дуучин: [
-    "im bad guy",
-    "pepsi cola",
-    "kissy face kissy face",
-    "энийг угаасаа бараг таахгүй дээ",
-    "сая зун трэнд болоод байсан дууны эзэн",
-    "swim ээр нь мэднэ дээ"
+    "түүний дуу хоолой маш өвөрмөц бөгөөд шивнэх мэт сонсогддог",
+    "дуучны бүтээлүүд ихэвчлэн меланхолик, винтэж стильтэй бөгөөд 'Summertime Sadness' дуугаараа алдаршсан",
+    "K-pop хамтлагийн гишүүн бөгөөд солог дуу хоолойгоороо олон хүний хайрыг татсан",
+    "'Eurythmics' хамтлагийн нэгэн хэсэг байсан бөгөөд 'Sweet Dreams' дуугаараа алдартай",
+    "инди-поп, электро-поп төрлөөр уран бүтээлээ туурвидаг бөгөөд өвөрмөц стильтэй, дуунууд нь тикток дээр дандаа трэнд болдог",
+    "R&B, поп болон электро элементүүдийг хослуулсан өвөрмөц дуу хөгжмөөрөө алдартай"
   ],
 };
 
-//Game variables
-let winCount = 0;
-let count = 0; // Wrong attempts
-let chosenWord = "";
-let chosenHint = "";
-let totalLives = 5; // Total lives
-let totalLetters = 0; // Count only letters for win condition
+//togloomiin ywtsiin utga hadgalah
 
-//Mongolian Cyrillic Alphabet
+let winCount = 0; //zuw taasan useg hadgalna
+let count = 0; //buruu taasan useg hadgalna hangman zurahad ashiglana
+let chosenWord = ""; //randomoor songoson ugiig hadgalna 
+let chosenHint = ""; //hintiig hadgalna
+let totalLives = 5; //niit ami
+let totalLetters = 0; //songogdson ugiin niit useg
+
+
+//mongol useg
 const mongolianLetters = [
   "А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","Ө",
   "П","Р","С","Т","У","Ү","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я"
 ];
 
-// English Alphabet [A-Z]
+//angli useg
 const englishLetters = [];
 for (let i = 65; i < 91; i++) {
   englishLetters.push(String.fromCharCode(i));
 }
 
-//Display options (categories)
+
+//turuld tohirson usegnuudiig haruulah heseg
 const displayOptions = () => {
   const categoriesContainer = optionsContainer.querySelector(".categories-container");
   categoriesContainer.innerHTML = "";
@@ -91,35 +96,43 @@ const displayOptions = () => {
   }
 };
 
-//Create Keyboard based on category
-const createKeyboard = (category) => {
-  // Clear previous letters
-  letterContainer.innerHTML = "";
 
-  // Determine which keyboard to use
+//keyboard uusgeh heseg
+const createKeyboard = (category) => {
+  letterContainer.innerHTML = ""; //lettercontainer hesgiig reset hiine
+
+  //ymar turul songohoos shaltgaalj ali keyboardiig delgetsen haruulahaa songono
   let lettersArray;
   if (category === "жимс" || category === "амьтан") {
-    // Use Mongolian letters
     lettersArray = mongolianLetters;
   } else {
-    // Use English letters
     lettersArray = englishLetters;
   }
 
-  // Create buttons from the chosen alphabet
+  //useg burt button uusgeh
+  //lettersArray dotor angli bolon mongol usegnuud bagtana
+  //forEach funktseer useg bureer ni loop hiine
+  //dom dtrh elemented shine button uusgene
+  //css classlist uusgene
+  //buttond usgiig hadgalah
   lettersArray.forEach((letter) => {
-    let button = document.createElement("button");
-    button.classList.add("letter-btn");
-    button.innerText = letter;
+    let button = document.createElement("button"); 
+    button.classList.add("letter-btn"); 
+    button.innerText = letter; 
 
+    //buttond click uidel hiih ued yu hiihiig shiideh click uildel hiigdeh ued dtrh funkts ajillana
+    //chosenword buyu songoson ugig char aar huwaana
+    //bugdiig ni uppercase char bolgono
+    //useg burt dash
     button.addEventListener("click", () => {
       let charArray = chosenWord.split("");
       const guessedLetter = letter.toUpperCase();
       let dashes = document.getElementsByClassName("dashes");
 
-      // Check if guessed letter is in the word
+      //taamag zuw esehiig shalgana
+      //taasan useg chararray-d baigaa esehiig shalgana
+      //chararray dahi useg buriig shalgana
       if (charArray.includes(guessedLetter)) {
-        //Correct guess
         charArray.forEach((char, index) => {
           if (char === guessedLetter) {
             dashes[index].innerText = char;
@@ -130,38 +143,34 @@ const createKeyboard = (category) => {
             }
           }
         });
-      } else {
-        //Wrong guess
+      } else { //esreg tohioldold, drawman funktsiig duudna 
         count += 1;
         drawMan(count);
-        // Update lives left
         livesText.innerText = `Амь: ${totalLives - count}`;
 
         if (count === totalLives) {
-          // Player loses
           resultText.innerHTML = `<h2 class='lose-msg'>Та ялагдлаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
           blocker();
         }
       }
-      //disable clicked button after guess
-      button.disabled = true;
+      button.disabled = true;  //daragdsan towchiig idewhgui bolgono
     });
 
     letterContainer.append(button);
   });
 };
 
-//Block all the Buttons
+//blocker funtks - hereglegch neg songoh uildel hiisen bol tsaashd ymr negen nemelt uildel hiihiig haah
+//buh button iig idewhgui bolgoj shineer ehluuleh towchiig haruulna
 const blocker = () => {
   let optionsButtons = document.querySelectorAll(".category-btn");
   let letterButtons = document.querySelectorAll(".letter-btn");
 
-  //disable all options
+  //categor dahi buh button iig idewhgui bolgono
   optionsButtons.forEach((button) => {
     button.disabled = true;
   });
 
-  //disable all letters
   letterButtons.forEach((button) => {
     button.disabled = true;
   });
@@ -169,7 +178,9 @@ const blocker = () => {
   newGameContainer.classList.remove("hide");
 };
 
-//Word Generator
+
+//ug bolon hint songoh
+//optionValue - categort songogdson utga
 const generateWord = (optionValue) => {
   let optionsButtons = document.querySelectorAll(".category-btn");
   optionsButtons.forEach((button) => {
@@ -179,59 +190,47 @@ const generateWord = (optionValue) => {
     button.disabled = true;
   });
 
-  // Show letters, hint container, and lives
+  //hide class iig arilgah
   letterContainer.classList.remove("hide");
   hintContainer.classList.remove("hide");
   livesContainer.classList.remove("hide");
   userInputSection.innerText = "";
 
+
   let optionArray = options[optionValue];
   let randomIndex = Math.floor(Math.random() * optionArray.length);
   
-  // Trim and uppercase for consistent checking
   chosenWord = optionArray[randomIndex].trim().toUpperCase();
   chosenHint = hints[optionValue][randomIndex];
-
-  // Calculate total letters (A-ZА-ЯӨҮЁ)
   totalLetters = chosenWord.split('').filter(ch => /[A-ZА-ЯӨҮЁ]/i.test(ch)).length;
-
-  // Show 5 lives initially
   livesText.innerText = `Амь: ${totalLives - count}`;
 
-  // Build the displayItem
+  //songogdson ugiig delgets ruu haruulah
   let displayItem = '';
   for (let char of chosenWord) {
     if (/[A-ZА-ЯӨҮЁ]/i.test(char)) {
-      // It's a letter: underscore it
       displayItem += `<span class="dashes">&nbsp;</span>`;
     } else if (char === ' ') {
-      // It's a space
-      displayItem += `<span class="dashes-space">&nbsp;</span>`;
+      displayItem += `<span class="dashes-space">&nbsp</span>`;
     } else {
-      // Punctuation or other chars, show directly (revealed from start)
       displayItem += `<span class="dashes punct">${char}</span>`;
     }
   }
 
   userInputSection.innerHTML = displayItem;
-
-  // Hide hint text initially
   hintText.classList.add("hide");
-
-  // Create the keyboard based on the chosen category
   createKeyboard(optionValue);
 };
 
-//Initial Function (Called when page loads/user presses new game)
+//utguudiig reset hiih
 const initializer = () => {
   winCount = 0;
   count = 0;
   chosenWord = "";
   chosenHint = "";
   totalLetters = 0;
-  livesText.innerText = `Амь: ${totalLives}`; // reset lives display to full
+  livesText.innerText = `Амь: ${totalLives}`;
 
-  //Reset display
   userInputSection.innerHTML = "";
   letterContainer.classList.add("hide");
   newGameContainer.classList.add("hide");
@@ -246,7 +245,8 @@ const initializer = () => {
   initialDrawing();
 };
 
-//Canvas
+
+//hangman zuragdah heseg
 const canvasCreator = () => {
   let context = canvas.getContext("2d");
   context.beginPath();
@@ -270,8 +270,6 @@ const canvasCreator = () => {
   const rightArm = () => drawLine(70, 50, 90, 70);
   const leftLeg = () => drawLine(70, 80, 50, 110);
 
-  //5 lives total: head(1), body(2), leftArm(3), rightArm(4), leftLeg(5)
-
   const initialDrawing = () => {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     drawLine(10, 130, 130, 130);
@@ -283,7 +281,8 @@ const canvasCreator = () => {
   return { initialDrawing, head, body, leftArm, rightArm, leftLeg };
 };
 
-//Draw the man based on count
+
+//hangman zurah heseg 
 const drawMan = (count) => {
   let { head, body, leftArm, rightArm, leftLeg } = canvasCreator();
   switch (count) {
@@ -307,12 +306,10 @@ const drawMan = (count) => {
   }
 };
 
-//Show hint on hint button click
 hintButton.addEventListener("click", () => {
   hintText.innerText = chosenHint;
   hintText.classList.remove("hide");
 });
 
-//New Game
 newGameButton.addEventListener("click", initializer);
 window.onload = initializer;
