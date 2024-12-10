@@ -211,7 +211,7 @@ const generateWord = (optionValue) => {
     if (/[A-ZА-ЯӨҮЁ]/i.test(char)) {
       displayItem += `<span class="dashes">&nbsp;</span>`;
     } else if (char === ' ') {
-      displayItem += `<span class="dashes-space">&nbsp</span>`;
+      displayItem += `<span class="dashes-space">_</span>`;
     } else {
       displayItem += `<span class="dashes punct">${char}</span>`;
     }
