@@ -33,7 +33,18 @@
           const description = items[i].getElementsByTagName("description")[0]?.textContent || "No description available";
           const pubDate = items[i].getElementsByTagName("pubDate")[0]?.textContent || "No date available";
 
-          const thumbnailURL = "https://content.ikon.mn/news/2023/7/6/phfzmy_MPA_5210_h678.jpg";
+          // const thumbnailURL = "https://content.ikon.mn/news/2023/7/6/phfzmy_MPA_5210_h678.jpg";
+
+          const thumbnailDiv = items[i].getElementsByTagName("div")[0];
+          let thumbnailURL = "https://via.placeholder.com/300x150?text=No+Image";
+
+          if (thumbnailDiv) {
+            const imgTag = thumbnailDiv.querySelector("img.thumb") || thumbnailDiv.querySelector("img.ikonlazy");
+            if (imgTag) {
+              thumbnailURL = imgTag.getAttribute("data-src") || imgTag.getAttribute("src") || thumbnailURL;
+            }
+          }
+
 
           const listItem = document.createElement("li");
           listItem.classList.add("item_card");
