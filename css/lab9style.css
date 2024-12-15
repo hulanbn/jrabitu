@@ -168,6 +168,20 @@
     line-height: 1.2em;
     border-bottom: none;
   }
+
+  .dashes.revealed {
+    visibility: visible;
+    font-weight: bold;
+  }
+  .revealed {
+    visibility: visible;
+  }
+  
+  .space {
+    display: inline-block;
+    width: 10px; /* Adjust for spacing */
+  }
+    
   
   
   .hide {

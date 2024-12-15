@@ -20,8 +20,8 @@ const livesText = document.querySelector(".lives-text");
 let options = {
   жимс: ["алим", "нэрс", "мандарин", "хан боргоцой", "анар", "тарвас"],
   амьтан: ["тэмээ", "янгир", "цоохор ирвэс", "ятуу", "тогоруу", "хандгай"],
-  кино: ["Mean Girls", "Howl's Moving Castle", "Me before you", "Parasite", "Divergent", "home alone"],
-  дуучин: ["Billie_Eilish", "Lana_Del_Rey", "Rose", "Annie_Lennox", "Artemas", "Chase_Atlantic "]
+  кино: ["Mean Girls", "Howl Moving Castle", "Me before you", "Parasite", "Divergent", "home alone"],
+  дуучин: ["Billie Eilish", "Lana Del Rey", "Rose", "Annie Lennox", "Artemas", "Chase Atlantic "]
 };
 
 let hints = {
@@ -127,34 +127,40 @@ const createKeyboard = (category) => {
     button.addEventListener("click", () => {
       let charArray = chosenWord.split("");
       const guessedLetter = letter.toUpperCase();
-      let dashes = document.getElementsByClassName("dashes");
+let dashes = document.querySelectorAll(".dashes");
 
-      //taamag zuw esehiig shalgana
-      //taasan useg chararray-d baigaa esehiig shalgana
-      //chararray dahi useg buriig shalgana
-      if (charArray.includes(guessedLetter)) {
-        charArray.forEach((char, index) => {
-          if (char === guessedLetter) {
-            dashes[index].innerText = char;
-            winCount += 1;
-            if (winCount === totalLetters) {
-              resultText.innerHTML = `<h2 class='win-msg'>Та яллаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
-              blocker();
-            }
-          }
-        });
-      } else { //esreg tohioldold, drawman funktsiig duudna 
-        count += 1;
+dashes.forEach((dash) => {
+  if (dash.getAttribute("data-letter") === guessedLetter) {
+    dash.innerText = guessedLetter; // Reveal the letter
+    dash.classList.add("revealed"); // Mark it as revealed
+    winCount++;
+    correctGuess = true;
+  }
+});
+
+    
+      // Increment wrong guesses if the guess is incorrect
+      if (!correctGuess) {
+        count++;
         drawMan(count);
         livesText.innerText = `Амь: ${totalLives - count}`;
-
         if (count === totalLives) {
           resultText.innerHTML = `<h2 class='lose-msg'>Та ялагдлаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
           blocker();
         }
       }
-      button.disabled = true;  //daragdsan towchiig idewhgui bolgono
+    
+      // Check win condition: only letters count
+if (document.querySelectorAll(".dashes:not(.revealed)").length === 0) {
+  resultText.innerHTML = `<h2 class='win-msg'>Та яллаа!!</h2><p>Таах үг: <span>${chosenWord}</span></p>`;
+  blocker();
+}
+
+
+    
+      button.disabled = true; // Disable the guessed button
     });
+    
 
     letterContainer.append(button);
   });
@@ -190,37 +196,46 @@ const generateWord = (optionValue) => {
     button.disabled = true;
   });
 
-  //hide class iig arilgah
+  // Reset the display
   letterContainer.classList.remove("hide");
   hintContainer.classList.remove("hide");
   livesContainer.classList.remove("hide");
   userInputSection.innerText = "";
 
-
+  // Select a random word
   let optionArray = options[optionValue];
   let randomIndex = Math.floor(Math.random() * optionArray.length);
-  
   chosenWord = optionArray[randomIndex].trim().toUpperCase();
   chosenHint = hints[optionValue][randomIndex];
-  totalLetters = chosenWord.split('').filter(ch => /[A-ZА-ЯӨҮЁ]/i.test(ch)).length;
-  livesText.innerText = `Амь: ${totalLives - count}`;
 
-  //songogdson ugiig delgets ruu haruulah
-  let displayItem = '';
-  for (let char of chosenWord) {
-    if (/[A-ZА-ЯӨҮЁ]/i.test(char)) {
-      displayItem += `<span class="dashes">&nbsp;</span>`;
-    } else if (char === ' ') {
-      displayItem += `<span class="dashes-space">_</span>`;
-    } else {
-      displayItem += `<span class="dashes punct">${char}</span>`;
-    }
+  // Calculate total guessable letters (ignore spaces and special characters)
+  totalLetters = chosenWord.split('').filter(ch => /[A-ZА-ЯӨҮЁ]/.test(ch)).length;
+  winCount = 0; // Reset win count
+  
+
+  // Display the word with placeholders
+let displayItem = '';
+for (let char of chosenWord) {
+  if (/[A-ZА-ЯӨҮЁ]/.test(char)) {
+    displayItem += `<span class="dashes" data-letter="${char}">&nbsp;</span>`; // Hidden letters
+  } else if (char === ' ') {
+    displayItem += `<span class="space revealed"> </span>`; // Spaces (revealed)
+  } else {
+    displayItem += `<span class="revealed">${char}</span>`; // Special characters (revealed)
   }
+}
+
+
 
   userInputSection.innerHTML = displayItem;
+  livesText.innerText = `Амь: ${totalLives - count}`;
   hintText.classList.add("hide");
+
+  // Generate keyboard based on category
   createKeyboard(optionValue);
 };
+
+
 
 //utguudiig reset hiih
 const initializer = () => {
