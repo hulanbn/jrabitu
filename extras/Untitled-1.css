@@ -67,15 +67,15 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0;
+  height: 100vh;
   background-color: #000;
 }
 .main-container {
-  margin-top: 50px;
   display: flex;
-  width: 100%;
-  height: calc(100vh - 70px);
+  height: 100%;
 }
 aside.left-side {
   width: 25%;
@@ -85,13 +85,13 @@ aside.left-side {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 main.right_side {
   flex-grow: 1;
   background: #1c1c1c;
   padding: 20px;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 .visually-hidden {
   position: absolute;
@@ -145,6 +145,12 @@ main.right_side {
   transform: scale(1.05);
 }
 
+.main{
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 70px);
+}
 .left-side{
   width: 28%; 
   background-color: #121212;
