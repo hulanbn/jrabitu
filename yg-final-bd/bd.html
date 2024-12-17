@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Pomodoro</title>
+    <link rel="stylesheet" href="bd.css">
+</head>
+<body>
+    <div class="container">
+        <!-- main -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <!--front todo -->
+                <div class="flip-card-front">
+                    <h2>To-Do жагсаалт <img src="./pic/light-bulb.png" alt="light-bulb"></h2>
+                    <div class="row">
+                        <input type="text" id="input-box" placeholder="bichih heseg">
+                        <button onclick="addTask()">Нэмэх</button>
+                    </div>
+                    <ul id="list-container">
+
+                    </ul>
+                </div>
+
+                <!-- back pomo -->
+                <div class="flip-card-back">
+                    <h2>Pomodoro <img src="./pic/tomato.png" alt="tomato"></h2>
+                    <div class="painel">
+                        <p id="study">study</p>
+                        <p id="break">break</p>
+                    </div>
+                    <div class="time">
+                        <p id="minute">25</p>
+                        <p>:</p>
+                        <p id="second">00</p>
+                    </div>
+                    <div class="controls">
+                        <button id="start" onclick="start()">Start</button>
+                        <button id="stop" onclick="stopTimer()" style="display:none;">Stop</button>
+                        <button id="reset" onclick="resetTimer()">Reset</button>  
+                        <button id="study-btn" onclick="switchToStudy()">Study</button>
+                        <button id="break-btn" onclick="switchToBreak()">Break</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bd.js"></script>
+</body>
+</html>
